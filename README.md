@@ -85,3 +85,8 @@ Ex. Loading Illuminate\Database
 ```
 $this->dock->file(FCPATH.'vendor'.DIRECTORY_SEPARATOR.'Illuminate'.DIRECTORY_SEPARATOR.'Database','Illuminate\Database\Capsule\Manager');
 ```
+
+
+### Side notes
+Dock uses reflection to pass your start up parameters to your namespaced class. If you choose not to use reflection for one reason or an
+other you can disable this behavior by changing the class property use_reflection to false.
