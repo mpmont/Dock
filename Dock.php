@@ -101,6 +101,19 @@ class Dock {
     }
 
     /**
+     * Composer
+     * Loads a composer package
+     *
+     * @access public
+     * @param  [string] $namespace
+     * @param  [string] $params
+     * @param  [array] $object_name
+     */
+    public function composer($namespace, $params = NULL, $object_name = NULL) {
+        $this->_load('composer',$namespace,$params,$object_name);
+    }
+
+    /**
      * Load
      * Does the real work for this library
      *
@@ -131,29 +144,37 @@ class Dock {
                 $path = APPPATH.strtolower($type);
             break;
 
+            case 'composer':
+                $path = '-1';
+                $library_path = 'COMPOSER';
+            break;
+
             default:
                 $path = $type;
             break;
         }
 
-        //update our path with the namespace folders
-        $path = $path.DIRECTORY_SEPARATOR.implode(DIRECTORY_SEPARATOR,$path_segments);
+        //only check the path if we have to
+        if ($path!='-1') {
+            //update our path with the namespace folders
+            $path = $path.DIRECTORY_SEPARATOR.implode(DIRECTORY_SEPARATOR,$path_segments);
 
-        //does this directory exists?
-        if (!is_dir($path)) {
-            show_error('X-2');
-        }
+            //does this directory exists?
+            if (!is_dir($path)) {
+                show_error('X-2');
+            }
 
-        //make sure our library exists
-        $library_path = $path.DIRECTORY_SEPARATOR.$library_name.'.php';
-        if (!file_exists($library_path)) {
-            show_error('X-3');
-        }
+            //make sure our library exists
+            $library_path = $path.DIRECTORY_SEPARATOR.$library_name.'.php';
+            if (!file_exists($library_path)) {
+                show_error('X-3');
+            }
 
-        //we should use $this->CI->load->file($library_path);?
-        //we should only do this is the class doesn't already exists
-        if (!class_exists($namespace)) {
-            include($library_path);
+            //we should use $this->CI->load->file($library_path);?
+            //we should only do this is the class doesn't already exists
+            if (!class_exists($namespace)) {
+                include($library_path);
+            }
         }
 
         //we have included the class files but lets make sure the class actually exists
