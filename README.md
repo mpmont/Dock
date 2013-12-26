@@ -117,6 +117,7 @@ You may even rename your class object
 ```
 $this->dock->composer('Some\Package\Name',array('Param1','Param2'),'SuperPackage');
 //$this->Some->Package->SuperPackage;
+```
 <hr />
 
 ### <a name="8">8-Additional notes</a>
