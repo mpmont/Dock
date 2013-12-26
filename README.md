@@ -101,7 +101,22 @@ $this->dock->file('path/without/filename','Name\Space\Name');
 <hr />
 
 ### <a name="7">7-Composer Packages</a>
-#### This feature is BETA
+You can also use Dock to load Composer packages the traditional way within CodeIgniter. Make sure you have Composer enabled in your CodeIgniter project and then call something similar to this:
+
+Ex.
+```
+$this->dock->composer('Some\Package\Name');
+```
+
+You can even send construct parameters
+```
+$this->dock->composer('Some\Package\Name',array('Param1','Param2'));
+```
+
+You may even rename your class object
+```
+$this->dock->composer('Some\Package\Name',array('Param1','Param2'),'SuperPackage');
+//$this->Some->Package->SuperPackage;
 <hr />
 
 ### <a name="8">8-Additional notes</a>
