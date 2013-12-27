@@ -25,7 +25,7 @@ $this->load->library('dock');
 <hr />
 
 ### <a name="3">3-What is Dock</a>
-Dock is a class loader for [CodeIgniter](http://github.com/ellislab/codeigniter) that will load namespaced classes and make them available the same way CodeIgniter classes are accessed via $this->Something->something. Dock was created for people who like the traditional CodeIgniter way of accessing classes but aren't ready to use a full blown [Composer](http://www.google.com) setup yet. 
+Dock is a class loader for [CodeIgniter](http://github.com/ellislab/codeigniter) that will load namespaced classes and make them available the same way CodeIgniter classes are accessed via $this->Something->something. Dock was created for people who like the traditional CodeIgniter way of accessing classes but aren't ready to use a full blown [Composer](https://github.com/composer/composer) setup yet. 
 
 ### <a name="4">4-Loading Libraries</a>
 Dock expects that your namespaced library follows a folder and file structure according to its name.
