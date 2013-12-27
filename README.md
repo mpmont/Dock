@@ -127,7 +127,12 @@ You may want to create alias names for a namespaced library. To register an alia
 Ex.
 ```
 $this->dock->alias('Illuminate\Database\Capsule\Manager','Laravel\Database');
+
+#$this->dock->composer('Laravel\Database');
+
+#$this->Laravel->Database->somemethod();
 ```
+
 <hr />
 
 ### <a name="9">9-Additional notes</a>
