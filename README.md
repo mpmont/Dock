@@ -10,7 +10,8 @@ CodeIgniter 3 Namespace Loader
 5. <a href="#5">Loading Models</a>
 6. <a href="#6">Loading Files</a>
 7. <a href="#7">Loading Composer Packages</a>
-8. <a href="#8">Additional Notes</a>
+8. <a href="#8">Alias</a>
+9. <a href="#9">Additional Notes</a>
 <hr />
 
 ### <a name="1">1-Installation</a>
@@ -120,6 +121,15 @@ $this->dock->composer('Some\Package\Name',array('Param1','Param2'),'SuperPackage
 ```
 <hr />
 
-### <a name="8">8-Additional notes</a>
+### <a name="8">Alias</a>
+You may want to create alias names for a namespaced library. To register an alias you must call the command alias function with two parameters.
+
+Ex.
+```
+$this->dock->alias('Illuminate\Database\Capsule\Manager','Laravel\Database');
+```
+<hr />
+
+### <a name="9">9-Additional notes</a>
 Dock uses reflection to pass your start up parameters to your namespaced class. If you choose not to use reflection for one reason or an
 other you can disable this behavior by changing the class property use_reflection to false just keep in mind that you will only be able to pass 1 parameter to your construct.
