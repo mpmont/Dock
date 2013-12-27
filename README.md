@@ -121,7 +121,7 @@ $this->dock->composer('Some\Package\Name',array('Param1','Param2'),'SuperPackage
 ```
 <hr />
 
-### <a name="8">Alias</a>
+### <a name="8">8-Alias</a>
 You may want to create alias names for a namespaced library. To register an alias you must call the command alias function with two parameters.
 
 Ex.
