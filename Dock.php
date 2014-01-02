@@ -114,6 +114,20 @@ class Dock {
     }
 
     /**
+     * Alias
+     * Allows a namespaced class to be loaded under an Alias
+     *
+     * @access public
+     * @param  [string] $namespace
+     * @param  [string] $alias
+     * @return [bool]
+     */
+    public function alias($namespace,$alias) {
+        class_alias($namespace,$alias);
+        return true;
+    }
+
+    /**
      * Load
      * Does the real work for this library
      *
